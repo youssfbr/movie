@@ -1,18 +1,25 @@
 package com.github.youssfbr.movie.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_user")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Movie {
+public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private Double score;
-    private Integer count;
-    private String image;
+
+    @Column(nullable = false, unique = true)
+    private String email;
 
 }
