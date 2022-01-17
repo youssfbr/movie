@@ -1,19 +1,15 @@
 package com.github.youssfbr.movie.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
+
 import java.io.Serializable;
 
 @Embeddable
-@Data
-@Builder
+@Getter@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class ScorePK implements Serializable {
 
     private static final long serialVersionUID = 1L;

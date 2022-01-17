@@ -22,12 +22,13 @@ public class MovieController {
     private final IMovieService movieService;
 
     @GetMapping
-    public ResponseEntity<Page<MovieDTO>> findAll(Pageable pageable) {
+    public ResponseEntity<Page<MovieDTO>> findAll(final Pageable pageable) {
         return ResponseEntity.ok(movieService.findAll(pageable));
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<MovieDTO> findById(@PathVariable Long id) {
+    public ResponseEntity<MovieDTO> findById(final @PathVariable Long id) {
         return ResponseEntity.ok(movieService.findById(id));
     }
+
 }

@@ -1,16 +1,16 @@
 package com.github.youssfbr.movie.entities;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_movie")
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
@@ -19,16 +19,15 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false)
     private Double score;
 
-    @Column(nullable = false)
     private Integer count;
 
-    @Column(nullable = false)
     private String image;
+
+    @OneToMany(mappedBy = "id.movie")
+    private Set<Score> scores = new HashSet<>();
 
 }

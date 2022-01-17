@@ -36,8 +36,7 @@ public class MovieService implements IMovieService {
     @Override
     @Transactional(readOnly = true)
     public MovieDTO findById(final Long id) {
-
-        return movieRepository
+        return   movieRepository
                 .findById(id)
                 .map(movieMapper::toDTO)
                 .orElseThrow(() -> new ResourceNotFoundException(MESSAGE_ID + id));

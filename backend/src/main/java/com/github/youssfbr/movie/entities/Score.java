@@ -1,6 +1,5 @@
 package com.github.youssfbr.movie.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +11,6 @@ import javax.persistence.Table;
 @Table(name = "tb_score")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Score {
 
     @EmbeddedId
